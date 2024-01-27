@@ -1,0 +1,9 @@
+/target
+cookie_1
+cookie_2
+calendar_file
+last_updated
+ecosystem.config.js
+
+.direnv/
+result
