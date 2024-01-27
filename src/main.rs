@@ -126,7 +126,7 @@ async fn get_tests(group: Group) -> Result<TestsResponse> {
     .await;
 
     let Ok(SomeResponse::Tests(data)) =
-        request_with_bypass(format!("/{}/Start.mvc/GetLastTests", std::env::var("SYMBOL").unwrap()), &auth_info).await else {
+        request_with_bypass(format!("/{}/Start.mvc/GetLastTests", std::env::var("SYMBOL").unwrap()).as_str(), &auth_info).await else {
             bail!("Invalid response");
         };
 
@@ -195,7 +195,7 @@ async fn get_plan(group: Group) -> Result<PlanResponse> {
     .await;
 
     let Ok(SomeResponse::Plan(data)) =
-        request_with_bypass(format!("/{}/Start.mvc/GetKidsLessonPlan", std::env::var("SYMBOL").unwrap()), &auth_info).await else {
+        request_with_bypass(format!("/{}/Start.mvc/GetKidsLessonPlan", std::env::var("SYMBOL").unwrap()).as_str(), &auth_info).await else {
             bail!("Invalid response");
         };
 
